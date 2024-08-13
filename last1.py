@@ -171,7 +171,7 @@ def sellQuantity(main_data,ID_s):
     squantity_valid = False
     while squantity_valid == False:
         quantity_s = int(input("Enter the quantity of furniture: "))
-        if quantity_s > 0 and quantity_s <= len(file_content):
+        if quantity_s > 0 and quantity_s <= int(main_data[ID_s][2]):
             squantity_valid = True
             return quantity_s
         else:
@@ -187,7 +187,7 @@ def s_invoice(cart):
 
     print("\n  INVOICE")
     print("\n" + "Name: " + user_name)
-    date = dateTime()
+    date = date_time()
     print("Sell Date: " + str(date))
     print("---------------------------------------------------------------")
     print("SNo", "\t", "Brand", "\t","Product","\t","Quantity","\t","Price")
